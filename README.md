@@ -115,7 +115,7 @@ func main() {
 }
 ```
 
-## Channels Example
+### Channels Example
 ```
 package main
 
