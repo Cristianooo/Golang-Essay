@@ -13,13 +13,13 @@ At Google in 2007, programmers shared a common dislike of C++ for a wide range o
 ## When should it be used
 The simplicity of Go allows it to excel when tasked with developing applications that are commercially viable. Among the developer community, the statement can be made that Go is the most suitable for producing utility type programs and server side applications. Examples of these backend applications include command line apps, databases, and network servers. In some cases, Go can be used for developing infrastructure and embedded systems software. Since it is considered to be user-friendly but still capable of creating complex, large-scale software, it is a viable choice for large programming teams with developers of varying skill levels, as well as those that deal with legacy code. With its growing popularity, more companies throughout the world are deciding to adopt Go as one of the programming languages used for their projects and services.
 
-##Where is it used
+## Where is it used
 The simplicity of Go allows it to excel when tasked with developing applications that are commercially viable. Among the developer community, the statement can be made that Go is the most suitable for producing utility type programs and server side applications. Examples of these backend applications include command line apps, databases, and network servers. In some cases, Go can be used for developing infrastructure and embedded systems software. Since it is considered to be user-friendly but still capable of creating complex, large-scale software, it is a viable choice for large programming teams with developers of varying skill levels, as well as those that deal with legacy code. With its growing popularity, more companies throughout the world are deciding to adopt Go as one of the programming languages used for their projects and services.
 
-##Why is go suited for these tasks
+## Why is go suited for these tasks
 Go should be chosen when looking for great efficiency in completing tasks concurrently, all the while maintaining robust, straightforward code. This need for efficiency strives from a shift in the hardware industry with more and more cores being added to processors. Most modern programming languages like Java and Python, were built in the 90s in a single threaded environment. Go, however, was released in 2009 when multi-core processors were readily available, meaning they kept concurrency in mind. Go has goroutines instead of threads, which only consume 2KB memory from the heap opposed to threads in other languages which take up 1MB. Go also implements the following: growable segmented stacks (only using more memory when needed); faster startup time; built-in primitives to communicate safely between themselves; no 1:1 mapping (allows a single goroutine to run on multiple threads). Go is even efficient on the compiling side of things, compiling directly onto the processor without a VM, removing one step and increasing performance. Finally, Go is simply built, going as far as removing certain features in order to maintain simplicity and robustness. Go does not have classes, inheritance, generics, or exceptions, in hopes to create easier to read code and cause less problems later on.
 
-##Interesting features
+## Interesting features
 The Golang is influenced by C/C++ and holds features that were designed to combat the common criticisms of the C language. It is designed to be dynamically typed, so declarations can be as straightforward as x := 0 instead of int x= 0. It also supports remote packaging management, similar to Java, where programmers can simply request packages with go get. A particularly interesting mechanic of Go is its built-in concurrency handling, where it is able to use light weight processes, called goroutines, for smooth threading. Additionally, it contains an interface system that replaces virtual inheritance with a convenient structure of global type embedment. Go also has a unique select statement, which functions similarly to a switch statement except that the case is chosen upon which case occurs first, which adds to the convenient threading design that Go revolves itself upon.
 
 ## Works Cited
@@ -27,7 +27,9 @@ https://hub.packtpub.com/why-golan-is-the-fastest-growing-language-on-github/
 https://en.wikipedia.org/wiki/Go_(programming_language)#Applications
 https://www.upwork.com/hiring/development/golang-programming-language/
 https://medium.com/@kevalpatel2106/why-should-you-learn-go-f607681fad65
-
+https://gobyexample.com/channels
+https://medium.com/qash/golang-the-next-language-to-learn-for-developers-2c7c32b8a095
+https://www.golang-book.com/books/intro/10
 
 ## Standard features not included in Go
 * Classes
@@ -37,13 +39,17 @@ https://medium.com/@kevalpatel2106/why-should-you-learn-go-f607681fad65
 * Generics
 * Exceptions
 
-##Benefits of goroutines
+## Benefits of goroutines
 * 2KB of memory used per goroutine
 * Implement growable segmented stacks
 * Faster start times than threads
 * Built-in primitives to communicate safely between themselves
 * Allow you to avoid having to resort to mutex locking when sharing data structures
 * No 1:1 mapping from goroutines to OS threads
+
+## Why Go is so good for multithreading
+### Channels
+"Channels are the pipes that connect concurrent goroutines. You can send values into channels from one goroutine and receive those values into another goroutine."
 
 ### Goroutine example
 ```
@@ -108,4 +114,20 @@ func main() {
 }
 ```
 
+## Channels Example
+```
+package main
+
+import "fmt"
+
+func main() {
+
+    messages := make(chan string)
+
+    go func() { messages <- "ping" }()
+
+    msg := <-messages
+    fmt.Println(msg)
+}
+```
 [Online Go Compiler Link](https://play.golang.org/)
