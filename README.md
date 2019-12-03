@@ -1,7 +1,7 @@
 # Go
 Group Members: Cristiano Firmani, Jayson Marshall, Rachel Ross, Justin Saborouh
 
-[Essay Link](https://docs.google.com/document/d/1G_eh0lOtl0DZ1JZEYKoSsh-RG4AyFVAIgwK4pPHzDqE/edit?usp=sharing) <br /> 
+[Essay Link](https://docs.google.com/document/d/1G_eh0lOtl0DZ1JZEYKoSsh-RG4AyFVAIgwK4pPHzDqE/edit?usp=sharing) <br />
 [Presentation Link](https://docs.google.com/presentation/d/1asJg6P7sjdwdhOy6yYZZmYkHltVAzXLwFNaaNEIaDFM/edit?usp=sharing)
 
 ## Why We Chose Go
@@ -51,6 +51,7 @@ https://www.golang-book.com/books/intro/10
 ### Channels
 "Channels are the pipes that connect concurrent goroutines. You can send values into channels from one goroutine and receive those values into another goroutine."
 
+## Code Examples
 ### Goroutine example
 ```
 package main
